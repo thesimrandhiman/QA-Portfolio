@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Twitter, Linkedin, Github, Code, FileText, CheckCircle, Phone } from "lucide-react";
@@ -50,6 +48,9 @@ function ContactForm() {
     });
     return !error;
   };
+  // Formspree endpoint (replace with your Formspree form ID after signup)
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xdkgblrr";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
@@ -59,11 +60,23 @@ function ContactForm() {
       return;
     }
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setStatus('success');
-      setForm({ name: '', email: '', message: '' });
-      setTouched({});
-      setErrors({});
+      const formData = new FormData();
+      formData.append('name', form.name);
+      formData.append('email', form.email);
+      formData.append('message', form.message);
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+      });
+      if (response.ok) {
+        setStatus('success');
+        setForm({ name: '', email: '', message: '' });
+        setTouched({});
+        setErrors({});
+      } else {
+        setStatus('error');
+        setErrors(prev => ({ ...prev, submit: 'Failed to send message. Please try again.' }));
+      }
     } catch (error) {
       setStatus('error');
       setErrors(prev => ({ ...prev, submit: 'Failed to send message. Please try again.' }));
@@ -197,36 +210,52 @@ function QAPortfolio() {
   // Game QA-focused projects
   const projects = [
     {
+      id: 6,
+      title: "Lysfanga: The Time Shift Warrior – QA Project (Quantic Dream)",
+      description: "Platform: Steam (PC). Client: Quantic Dream. Tools Used: Jira. Testing: Smoke testing, Functional Testing, Regression Testing, Destructive and ad-hoc testing. Genre: Hack'nSlash.",
+      image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2161620/header.jpg",
+      tags: ["Steam", "PC", "Quantic Dream", "Jira", "Smoke", "Functional", "Regression", "Destructive", "Ad-hoc", "Hack'nSlash"],
+      link: "https://store.steampowered.com/app/2161620/Lysfanga_The_Time_Shift_Warrior/",
+    },
+    {
+      id: 5,
+      title: "Suicide Squad: Kill the Justice League – QA Project (Warner Bros. Games)",
+      description: "Project Date: May 2022 – Dec 2022. Platforms: Steam (PC), PS5, Xbox Series X/S. Client: Warner Bros. Games. Tools Used: Jira, Testrail, Confluence, Slack, PS4/PS5 Neighborhood, XDK. Testing: Smoke testing, Functional Testing, Regression Testing, Destructive and ad-hoc testing. Genre: Online looter shooter, live service.",
+      image: "https://cdn.cloudflare.steamstatic.com/steam/apps/315210/header.jpg",
+      tags: ["PC", "PS5", "Xbox Series X/S", "Jira", "Testrail", "Confluence", "Slack", "PS4 Neighborhood", "PS5 Neighborhood", "XDK", "Smoke", "Functional", "Regression", "Destructive", "Ad-hoc", "Online Looter Shooter", "Live Service"],
+      link: "https://www.suicidesquadgame.com/",
+    },
+    {
       id: 1,
-      title: "AAA Console Game Certification QA",
-      description: "Led certification and compliance QA for a major PlayStation/Xbox title. Managed test plans, platform TRC/XR compliance, multiplayer, and regression. Discovered and reported 200+ critical bugs pre-launch.",
-      image: "/placeholder.svg",
-      tags: ["PlayStation", "Xbox", "TRC/XR", "Multiplayer", "Regression"],
-      link: "#",
+      title: "Digimon Survive – QA & Certification (Bandai Namco)",
+      description: "Tested Digimon Survive on PC, PS4, PS5, Nintendo Switch, and Xbox One. Ran full playthroughs, regressions, planned and executed test cases, and filed/managed bugs in the database. Ensured a high-quality release across all platforms.",
+      image: "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/en_US/games/switch/d/digimon-survive-switch/hero",
+      tags: ["PC", "PS4", "PS5", "Switch", "Xbox One", "Regression", "Test Planning", "Bug Reporting"],
+      link: "https://en.bandainamcoent.eu/digimon/digimon-survive",
     },
     {
       id: 2,
-      title: "VR Game QA & Performance Testing",
-      description: "Tested and optimized a VR puzzle game for Oculus and HTC Vive. Focused on performance, comfort, and cross-device compatibility. Automated smoke tests and tracked bugs in JIRA.",
-      image: "/placeholder.svg",
-      tags: ["VR", "Oculus", "HTC Vive", "Performance", "Automation"],
-      link: "#",
+      title: "Dragon Ball FighterZ – QA Project (Bandai Namco)",
+      description: "Project Date: Feb 2022 – Mar 2022. Platforms: Steam (PC), PS4, Xbox One. Client: Bandai Namco Entertainment. Tools: Jira, PS4 Neighborhood, XDK. Testing: Smoke, Functional, Regression, Ad-hoc.",
+      image: "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/en_US/games/switch/d/dragon-ball-fighterz-switch/hero",
+      tags: ["PC", "PS4", "Xbox One", "Jira", "PS4 Neighborhood", "XDK", "Smoke", "Functional", "Regression", "Ad-hoc"],
+      link: "https://en.bandainamcoent.eu/dragon-ball/dragon-ball-fighterz",
     },
     {
       id: 3,
-      title: "Mobile Battle Royale QA Automation",
-      description: "Developed Appium-based automation for a mobile battle royale game. Covered matchmaking, in-app purchases, and device compatibility. Reduced manual regression time by 60%.",
-      image: "/placeholder.svg",
-      tags: ["Mobile", "Appium", "Battle Royale", "Automation", "iOS/Android"],
-      link: "#",
+      title: "Evil Genius 2 – QA Project (Rebellion Developments)",
+      description: "Project Date: Feb 2022 – Mar 2022. Platforms: Steam (PC), PS4, PS5, Xbox One, Xbox Series X/S. Client: Rebellion Developments. Tools: Jira, PS4/PS5 Neighborhood, XDK. Testing: Smoke, Functional, Regression, Destructive, Ad-hoc.",
+      image: "https://cdn.cloudflare.steamstatic.com/steam/apps/700600/header.jpg",
+      tags: ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Jira", "PS4 Neighborhood", "PS5 Neighborhood", "XDK", "Smoke", "Functional", "Regression", "Destructive", "Ad-hoc"],
+      link: "https://rebellion.com/games/evil-genius-2-world-domination/",
     },
     {
       id: 4,
-      title: "Indie Game Accessibility & Usability QA",
-      description: "Collaborated with an indie studio to test accessibility features and usability for a narrative-driven PC game. Provided actionable feedback for colorblind, subtitle, and controller support.",
-      image: "/placeholder.svg",
-      tags: ["Accessibility", "Usability", "PC", "Indie", "Controller"],
-      link: "#",
+      title: "Sniper Elite 5 – QA Project (Rebellion Developments)",
+      description: "Project Date: March 2022 – April 2022. Platforms: Steam (PC), PS4, PS5, Xbox One, Xbox Series X/S. Client: Rebellion Developments. Tools Used: Jira, PS4/PS5 Neighborhood, XDK. Testing: Smoke testing, Functional Testing, Regression Testing, Destructive and ad-hoc testing.",
+      image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1029690/header.jpg",
+      tags: ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Jira", "PS4 Neighborhood", "PS5 Neighborhood", "XDK", "Smoke", "Functional", "Regression", "Destructive", "Ad-hoc"],
+      link: "https://rebellion.com/games/sniper-elite-5/",
     },
   ];
 
@@ -288,7 +317,7 @@ function QAPortfolio() {
                     className="w-28 h-28 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-4xl font-bold text-white shadow-lg mb-2 border-4 border-secondary relative overflow-hidden"
                   >
                     <img
-                      src="/profile.jpg"
+                      src={process.env.PUBLIC_URL + "/profile.jpg"}
                       alt="Profile"
                       className="w-full h-full object-cover rounded-full border-2 border-white shadow"
                     />
@@ -458,9 +487,14 @@ function QAPortfolio() {
                       className="group"
                     >
                       <Card className="overflow-hidden border border-white/30 bg-white/60 backdrop-blur-lg hover:border-primary/60 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
-                        <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 relative">
-                          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:4px_4px]" />
-                          <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-secondary/10 opacity-80" />
+                        <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 relative flex items-center justify-center">
+                          <img
+                            src={project.image}
+                            alt={project.title + ' screenshot'}
+                            className="object-cover w-full h-full rounded-t-xl max-h-56"
+                            style={{ maxHeight: 220 }}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-secondary/10 opacity-80 pointer-events-none" />
                           {/* Glass reflection accent */}
                           <div className="absolute top-2 left-2 w-1/3 h-2 bg-white/40 rounded-full blur-sm opacity-70 rotate-[-12deg]" />
                         </div>
@@ -476,11 +510,17 @@ function QAPortfolio() {
                               </Badge>
                             ))}
                           </div>
-                          <Button variant="outline" className="w-full group bg-gradient-to-r from-primary/10 to-secondary/10 hover:from-primary/20 hover:to-secondary/20 transition-all duration-200 shadow-md">
-                            <span className="flex items-center gap-2">
-                              View Project
-                              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                            </span>
+                          <Button
+                            asChild
+                            variant="outline"
+                            className="w-full group bg-gradient-to-r from-primary/10 to-secondary/10 hover:from-primary/20 hover:to-secondary/20 transition-all duration-200 shadow-md"
+                          >
+                            <a href={project.link} target="_blank" rel="noopener noreferrer">
+                              <span className="flex items-center gap-2">
+                                View Project
+                                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                              </span>
+                            </a>
                           </Button>
                         </div>
                       </Card>
