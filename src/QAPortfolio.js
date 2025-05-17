@@ -367,7 +367,7 @@ function QAPortfolio() {
                       <h4 className="font-semibold text-primary mb-1 flex items-center gap-2"><span role="img" aria-label="Experience">💼</span> Experience</h4>
                       <ul className="list-disc list-inside text-base mb-3">
                         <li><strong>Quality Assurance Tester</strong>, Virtualize Technologies (Jul 2023 - Present)</li>
-                        <li><strong>Functional Tester</strong>, Keywords Studios (Dec 2021 - Jul 2023)</li>
+                        <li><strong>Functional QA</strong>, Keywords Studios (Dec 2021 - Jul 2023)</li>
                         <li><strong>Game Tester</strong>, GameEon Studios (Jul 2021 - Nov 2021)</li>
                       </ul>
                       <h4 className="font-semibold text-primary mb-1 flex items-center gap-2"><span role="img" aria-label="Education">🎓</span> Education</h4>
