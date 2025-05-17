@@ -212,7 +212,7 @@ function QAPortfolio() {
     {
       id: 6,
       title: "Lysfanga: The Time Shift Warrior – QA Project (Quantic Dream)",
-      description: "Platform: Steam (PC). Client: Quantic Dream. Tools Used: Jira. Testing: Smoke testing, Functional Testing, Regression Testing, Destructive and ad-hoc testing. Genre: Hack'nSlash.",
+      description: "Tested Lysfanga: The Time Shift Warrior on Steam (PC). Managed and executed test cases, performed smoke, functional, regression, and ad-hoc testing, and reported bugs using Jira. Ensured a polished and stable release for Quantic Dream.",
       image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2161620/header.jpg",
       tags: ["Steam", "PC", "Quantic Dream", "Jira", "Smoke", "Functional", "Regression", "Destructive", "Ad-hoc", "Hack'nSlash"],
       link: "https://store.steampowered.com/app/2161620/Lysfanga_The_Time_Shift_Warrior/",
@@ -220,7 +220,7 @@ function QAPortfolio() {
     {
       id: 5,
       title: "Suicide Squad: Kill the Justice League – QA Project (Warner Bros. Games)",
-      description: "Project Date: May 2022 – Dec 2022. Platforms: Steam (PC), PS5, Xbox Series X/S. Client: Warner Bros. Games. Tools Used: Jira, Testrail, Confluence, Slack, PS4/PS5 Neighborhood, XDK. Testing: Smoke testing, Functional Testing, Regression Testing, Destructive and ad-hoc testing. Genre: Online looter shooter, live service.",
+      description: "Tested Suicide Squad: Kill the Justice League on Steam (PC), PS5, and Xbox Series X/S. Conducted comprehensive playthroughs, managed test cases, and reported bugs using Jira, Testrail, and Confluence. Helped deliver a high-quality online looter shooter experience for Warner Bros. Games.",
       image: "https://cdn.cloudflare.steamstatic.com/steam/apps/315210/header.jpg",
       tags: ["PC", "PS5", "Xbox Series X/S", "Jira", "Testrail", "Confluence", "Slack", "PS4 Neighborhood", "PS5 Neighborhood", "XDK", "Smoke", "Functional", "Regression", "Destructive", "Ad-hoc", "Online Looter Shooter", "Live Service"],
       link: "https://www.suicidesquadgame.com/",
@@ -236,7 +236,7 @@ function QAPortfolio() {
     {
       id: 2,
       title: "Dragon Ball FighterZ – QA Project (Bandai Namco)",
-      description: "Project Date: Feb 2022 – Mar 2022. Platforms: Steam (PC), PS4, Xbox One. Client: Bandai Namco Entertainment. Tools: Jira, PS4 Neighborhood, XDK. Testing: Smoke, Functional, Regression, Ad-hoc.",
+      description: "Tested Dragon Ball FighterZ on Steam (PC), PS4, and Xbox One. Executed test cases, performed smoke, functional, and regression testing, and reported bugs using Jira and platform tools. Supported a smooth and stable release for Bandai Namco.",
       image: "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/en_US/games/switch/d/dragon-ball-fighterz-switch/hero",
       tags: ["PC", "PS4", "Xbox One", "Jira", "PS4 Neighborhood", "XDK", "Smoke", "Functional", "Regression", "Ad-hoc"],
       link: "https://en.bandainamcoent.eu/dragon-ball/dragon-ball-fighterz",
@@ -244,7 +244,7 @@ function QAPortfolio() {
     {
       id: 3,
       title: "Evil Genius 2 – QA Project (Rebellion Developments)",
-      description: "Project Date: Feb 2022 – Mar 2022. Platforms: Steam (PC), PS4, PS5, Xbox One, Xbox Series X/S. Client: Rebellion Developments. Tools: Jira, PS4/PS5 Neighborhood, XDK. Testing: Smoke, Functional, Regression, Destructive, Ad-hoc.",
+      description: "Tested Evil Genius 2 on Steam (PC), PS4, PS5, Xbox One, and Xbox Series X/S. Managed and executed test cases, performed smoke, functional, regression, and ad-hoc testing, and reported bugs using Jira and platform tools. Helped ensure a quality release for Rebellion Developments.",
       image: "https://cdn.cloudflare.steamstatic.com/steam/apps/700600/header.jpg",
       tags: ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Jira", "PS4 Neighborhood", "PS5 Neighborhood", "XDK", "Smoke", "Functional", "Regression", "Destructive", "Ad-hoc"],
       link: "https://rebellion.com/games/evil-genius-2-world-domination/",
@@ -252,7 +252,7 @@ function QAPortfolio() {
     {
       id: 4,
       title: "Sniper Elite 5 – QA Project (Rebellion Developments)",
-      description: "Project Date: March 2022 – April 2022. Platforms: Steam (PC), PS4, PS5, Xbox One, Xbox Series X/S. Client: Rebellion Developments. Tools Used: Jira, PS4/PS5 Neighborhood, XDK. Testing: Smoke testing, Functional Testing, Regression Testing, Destructive and ad-hoc testing.",
+      description: "Tested Sniper Elite 5 on Steam (PC), PS4, PS5, Xbox One, and Xbox Series X/S. Conducted playthroughs, managed test cases, and performed smoke, functional, regression, and ad-hoc testing. Reported bugs using Jira and platform tools to support a successful launch for Rebellion Developments.",
       image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1029690/header.jpg",
       tags: ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Jira", "PS4 Neighborhood", "PS5 Neighborhood", "XDK", "Smoke", "Functional", "Regression", "Destructive", "Ad-hoc"],
       link: "https://rebellion.com/games/sniper-elite-5/",
@@ -267,7 +267,7 @@ function QAPortfolio() {
     { name: "Platform/Device Coverage (PS/Xbox/Switch/PC/VR/Mobile)", level: 92, icon: <Code className="h-5 w-5" /> },
     { name: "Performance & Compatibility Testing", level: 90, icon: <Phone className="h-5 w-5" /> },
     { name: "Test Plan & Scenario Design", level: 88, icon: <CheckCircle className="h-5 w-5" /> },
-    { name: "Automation Scripting (Cypress, Appium, Selenium)", level: 80, icon: <Github className="h-5 w-5" /> },
+    { name: "Gen AI Automation & Scripting (Cypress, Appium, Selenium)", level: 80, icon: <Github className="h-5 w-5" /> },
     { name: "Multiplayer/Network QA", level: 85, icon: <ArrowRight className="h-5 w-5" /> },
     { name: "Agile/Scrum Collaboration", level: 87, icon: <FileText className="h-5 w-5" /> },
     { name: "Accessibility & Usability QA", level: 82, icon: <CheckCircle className="h-5 w-5" /> },
@@ -294,7 +294,7 @@ function QAPortfolio() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  Elevating Games with Expert QA & Automation
+                  Unleashing Flawless Gameplay: Expert QA for Every Game
                 </motion.h1>
                 <motion.p
                   className="text-xl text-foreground"
